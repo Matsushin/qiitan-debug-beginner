@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       else
         message = 'アカウントがアクティブになっていません。'
         message += '招待メールを確認してください'
-        redirect_to root_path, alert: message
+        redirect_to login_path, alert: message
       end
     else
       flash.now[:alert] = 'メールアドレスまたはパスワードが正しくありません'
@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to root_url
+    redirect_to login_path
   end
 end

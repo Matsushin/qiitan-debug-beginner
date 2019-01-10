@@ -6,7 +6,7 @@ class AccountActivationsController < ApplicationController
       log_in user
       redirect_to root_path, notice: 'アカウントが有効になりました'
     else
-      redirect_to root_path, alert: 'リンクが無効です'
+      redirect_to login_path, alert: 'リンクが無効です'
     end
   end
 end

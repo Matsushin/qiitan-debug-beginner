@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      redirect_to root_url, notice: '招待メールを送りました。確認してください'
+      redirect_to login_path, notice: '招待メールを送りました。確認してください'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to root_url, notice: t('common.flash.updated')
+      redirect_to root_path, notice: t('common.flash.updated')
     else
       flash.now[:alert] = @user.errors.full_messages.join('。')
       render :edit

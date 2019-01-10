@@ -12,7 +12,7 @@ class PasswordResetsController < ApplicationController
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
-      redirect_to root_path, notice: '入力したメールアドレスにパスワード再設定メールを送りました'
+      redirect_to new_password_reset_path, notice: '入力したメールアドレスにパスワード再設定メールを送りました'
     else
       flash.now[:alert] = 'メールアドレスが見つかりません'
       render :new
@@ -47,7 +47,7 @@ class PasswordResetsController < ApplicationController
   def valid_user
     if not (@user && @user.activated? &&
         @user.authenticated?(:reset, params[:id]))
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 
