@@ -6,9 +6,12 @@ class User < ApplicationRecord
   has_many :stocks, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :username, presence: true, uniqueness: true, format: { with: /\A[0-9a-zA-Z@_-]{6,}\z/ }
-  validates :email, presence: true, uniqueness: true
-
+  validates :username, presence: true, uniqueness: true, format: { with: /\A[0-9a-zA-Z@_-]{6,}\z/ }, length: { maximum: 20 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+            format: { with: VALID_EMAIL_REGEX },
+            uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   enumerize :locale, in: %i(ja en), default: :ja
 
   before_save   :downcase_email
