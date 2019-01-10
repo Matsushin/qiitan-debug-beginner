@@ -1,0 +1,37 @@
+<div class="row user-row">
+  <div class="col-md-3 col-sm-3 col-12">
+    <div class="user__profile-image">
+      <%= image_tag @user.image %>
+    </div>
+    <h3><%= @user.username %></h3>
+  </div>
+  <div class="col-md-9 col-sm-9 col-12">
+    <div class="row user__activity-stats">
+      <div class="col-6 user__activity-stat">
+        <span class="user__activity-stat_count">
+          <%= @user.articles.count %>
+        </span>
+        <br>
+        Items
+      </div>
+      <div class="col-6 user__activity-stat">
+        <span class="user__activity-stat_count">
+          <%= Like.where(article: @user.articles).count %>
+        </span>
+        <br>
+        Contributtion
+      </div>
+    </div>
+    <ul class="nav nav-tabs mt-3 col-12">
+      <li class="nav-item">
+        <%= link_to '最近の投稿', user_path(@user), class: "nav-link #{liked_articles_request? ? '' : 'active'}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'いいねした投稿', show_user_path(@user, liked: :liked), class: "nav-link #{liked_articles_request? ? 'active' : ''}" %>
+      </li>
+    </ul>
+    <div class="col-12 text-left users__articles-container">
+      <%= render 'shared/articles/index', articles: @articles %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="article__item-stock-container" id="js-stock-action">
+  <% if stock&.persisted? %>
+    <%= link_to article_stock_path(article, stock), method: :delete, remote: true, class: 'article__item-stock-btn stocked' do %>
+      <div class="fa-stack">
+        <%= icon('fas', 'folder', class: 'fa-stack-1x') %>
+        <%= icon('fas', 'check', class: 'fa-stack-1x article__item-stock-check') %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to article_stocks_path(article), method: :post, remote: true, class: 'article__item-stock-btn' do %>
+      <%= icon('fas', 'folder-open') %>
+    <% end %>
+  <% end %>
+</div>

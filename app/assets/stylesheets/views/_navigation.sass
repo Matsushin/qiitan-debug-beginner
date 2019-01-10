@@ -1,0 +1,51 @@
+.navigation__container
+  display: inline-flex
+
+.navigation__login-link
+  color: white
+  &:hover
+    color: white
+  &:focus
+    background-color: $base-color
+    color: white
+
+.navigation__new-article-btn
+  background-color: $btn-color
+  height: 30px
+  margin-top: 6px
+  margin-right: 16px
+  border-radius: 4px
+  padding: 5px 20px
+  font-size: 0.8em
+
+.navbar-default .navbar-nav a.navigation__new-article-btn
+  &:hover, &:focus, &:active, &:active:hover, &:active:focus
+    background-color: $sub-color
+    border-color: $sub-color
+    color: white
+
+.navbar-nav > li > a.navigation__dropdown-toggle
+  padding: 10px 0
+
+.navigation__icon
+  border-radius: .2em
+  width: 32px
+  height: 32px
+
+.navigation__search-form
+  margin-top: 8px
+  margin-left: 20px
+
+.navigation__stocks-link
+  display: flex
+  cursor: pointer
+  color: white
+  font-size: 0.8em
+  line-height: 1
+  margin-right: 16px
+  padding-top: 16px
+  padding-bottom: 16px
+  &:hover
+    color: white
+  i
+    margin-right: 4px

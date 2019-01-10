@@ -1,0 +1,6 @@
+<p>[<%= @comment.article.title %>]にコメントがつきました。</p>
+
+<p> ー </p>
+<%= simple_format(h(@comment.body)) %>
+<p> ー</p>
+<%= link_to 'View it on QiitanDebugBeginner', article_url(@comment.article) %>

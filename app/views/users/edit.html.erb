@@ -1,0 +1,24 @@
+<div class="user-row">
+  <h2>プロフィール編集</h2>
+  <%= simple_form_for(@user, html: { method: :put, class: 'form-section' }) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group">
+      <%= f.input :username, autofocus: true, input_html: { class: 'fit-input' } %>
+      <%= f.input :email, autocomplete: 'email', input_html: { class: 'fit-input long' } %>
+      <%= f.input :profile_image do %>
+        <% if f.object.profile_image.attached? %>
+          <div class="profile_image">
+            <%= image_tag f.object.profile_image, height: 100 %>
+          </div>
+        <% end %>
+        <%= f.input_field :profile_image, as: :file, accept: 'image/*' %>
+      <% end %>
+      <%= f.input :password, autocomplete: 'new-password', input_html: { class: 'fit-input' }, hint: '空欄のままなら変更しません' %>
+      <%= f.input :password_confirmation, autocomplete: 'new-password', input_html: { class: 'fit-input' } %>
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-primary' %>
+        <%= link_to 'キャンセル', :back, class: 'btn page-link text-dark d-inline-block' %>
+      </div>
+    </div>
+  <% end %>
+</div>

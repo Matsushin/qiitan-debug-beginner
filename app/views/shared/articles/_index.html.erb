@@ -1,0 +1,34 @@
+<% if articles.present? %>
+  <% articles.includes(user: :profile_image_attachment).each do |article| %>
+    <div class="media article__items-container">
+      <%= link_to user_path(article.user), class: 'media__image thumb thumb-m' do %>
+        <%= image_tag article.user.image %>
+      <% end %>
+      <div class="article__items-body">
+        <div class="article__items-info">
+          <%= link_to article.user.username, user_path(article.user) %>
+          が
+          <%= l article.created_at.to_date %>
+          に投稿
+        </div>
+        <div class="article__items-title">
+          <%= link_to article.title, article_path(article) %>
+        </div>
+      </div>
+      <div class="article__items-status">
+        <% if article.likes.exists? %>
+          <%= icon 'fas', 'thumbs-up', article.likes.count, class: "#{current_user.present? && current_user.likes.exists?(article: article) ? 'artilce__items-status-liked' : ''}" %>
+        <% end %>
+        <% if article.comments.exists? %>
+          <div>
+            <%= icon 'far', 'comment' %>
+            <%= link_to article.comments.count, article_path(article) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate articles %>
+<% else %>
+  <p>記事が1つもありません。</p>
+<% end %>

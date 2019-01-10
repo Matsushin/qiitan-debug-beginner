@@ -1,0 +1,11 @@
+<% if controller_name != 'sessions' %>
+  <%= link_to icon('fas', 'caret-right', 'ログイン'), login_path %>
+  <br>
+<% end %>
+<% if controller_name != 'users' %>
+  <%= link_to icon('fas', 'caret-right', 'ユーザ登録'), signup_path %>
+  <br>
+<% end %>
+<% if controller_name != 'password_resets' && controller_name != 'users' %>
+  <%= link_to icon('fas', 'caret-right', 'パスワードを忘れた場合'), new_password_reset_path %>
+<% end %>

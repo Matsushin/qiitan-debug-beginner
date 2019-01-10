@@ -1,0 +1,5 @@
+<p><%= @user.username %>様</p>
+<p>以下のリンクをクリックし、メールアドレスの確認手続を完了させてください。</p>
+<p>
+  <%= link_to 'メールアドレスの確認', edit_account_activation_url(@user.activation_token, email: @user.email) %>
+</p>

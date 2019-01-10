@@ -1,0 +1,14 @@
+<% flash.each do |name, message| %>
+  <% if message.is_a?(String) && !Rails.env.test? %>
+    <% case name.to_s %>
+    <% when 'notice' %>
+      <script>
+        toastr.success('<%= message %>');
+      </script>
+    <% when 'alert' %>
+      <script>
+        toastr.error('<%= message %>');
+      </script>
+    <% end %>
+  <% end %>
+<% end %>

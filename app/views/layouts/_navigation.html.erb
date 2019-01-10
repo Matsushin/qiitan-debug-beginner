@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-white fixed-top">
+  <div class="container navigation__container">
+    <%= link_to 'QiitanDebugBeginner', root_path, class: 'navbar-brand' %>
+    <% @q ||= Article.none.search(params[:q]) %>
+    <%= search_form_for @q, url: root_path, html: { class: 'my-2 my-lg-0 navigation__search-form', method: 'get' } do |f| %>
+        <div class="input-group">
+          <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: 'キーワードを入力' %>
+          <div class="input-group-append fit-input">
+            <span class="input-group-text"><%= icon('fas', 'search') %></span>
+          </div>
+        </div>
+    <% end %>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navber" aria-controls="navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navber">
+      <% if logged_in? %>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to icon('fas', 'folder-open', 'ストック一覧'), stocks_path, class: 'nav-link navigation__stocks-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to icon('fas', 'pencil-alt', '投稿する'), new_article_path, class: 'nav-link btn btn-primary btn-sm navigation__new-article-btn' %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= link_to current_user.username, '#', class: 'nav-link dropdown-toggle', id: 'navbarDropdown', role: 'button', data: { toggle: 'dropdown' }, arial: { haspopup: 'true', expanded: 'false' } %>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to icon('fas', 'user', 'マイページ'), user_path(current_user), class: 'dropdown-item' %></a>
+              <%= link_to icon('fas', 'address-card', 'プロフィール設定'), edit_user_path(current_user), class: 'dropdown-item' %></a>
+              <%= link_to logout_path, method: 'delete', class: 'dropdown-item' do
+                icon('fas', 'sign-out-alt', 'ログアウト')
+              end
+              %>
+            </div>
+          </li>
+        </ul>
+      <% else %>
+        <%= link_to 'ログイン', login_path, class: 'navigation__login-link'  %>
+      <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,513 @@
+.articles.new .main__navigation .container
+  width: 100%
+  padding-left: 5px
+  padding-right: 5px
+  .article__body-form:focus
+    box-shadow: none
+
+.article__status-label-container
+  position: absolute
+  top: 6px
+  right: 12px
+
+.article__status-label
+  border-width: 1px
+  border-style: solid
+  border-radius: 3px
+  font-size: 0.8em
+  padding: 3px 6px
+
+.article__status-label-posted
+  color: #6ca2d1
+  border-color: #6ca2d1
+
+.article__status-label-unposted
+  color: #aaa
+  border-color: #aaa
+
+.article__form-container
+  position: absolute
+  top: 61px
+  right: 5px
+  bottom: 0
+  left: 5px
+
+.article__title-container
+  position: absolute
+  width: 100%
+  left: 0
+  right: 0
+  top: 0
+  height: 44px
+
+.article__markdown-container
+  position: absolute
+  width: 100%
+  left: 0
+  right: 0
+  top: 40px
+  bottom: 40px
+  box-sizing: border-box
+  border-radius: 3px
+  background-color: white
+  border: 1px solid $gray
+
+.article__body-container
+  width: 50%
+  border-top-left-radius: 3px
+  position: absolute
+  top: 0
+  bottom: 0
+  background-color: white
+
+.article__body-header
+  border-top-left-radius: 3px
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
+  width: 100%
+  padding: 0 8px
+  background-color: $gray-little
+  color: #999
+  line-height: 36px
+
+.article__body-panel
+  display: inline-block
+  width: 100%
+
+.article__body-form-container
+  position: absolute
+  top: 36px
+  bottom: 0
+  width: 100%
+
+  textarea.form-control
+    height: 100%
+
+.article__title-form
+  border: 1px solid $gray
+  font-size: 24px
+  padding-top: 8px
+  padding-bottom: 8px
+  padding-left: 10px
+  padding-right: 78px
+
+.article__body-form
+  box-sizing: border-box
+  box-shadow: none
+  border-radius: 0
+  width: 100%
+  height: 100%
+  outline: 0
+  display: block
+  margin-bottom: 0
+  padding: 10px
+  border: 0
+  font-family: Consolas,Liberation Mono,Menlo,Courier,monospace
+  color: #222
+  line-height: 1.5
+  resize: none
+
+.article__preview-container
+  width: 50%
+  border-left: solid 1px $gray
+  border-bottom-right-radius: 3px
+  border-top-right-radius: 3px
+  box-sizing: border-box
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  background-color: $gray-little
+  color: #999
+
+.article__preview-header
+  padding: 0 10px
+  line-height: 36px
+  font-size: 13px
+
+.article__preview-panel
+  position: absolute
+  top: 36px
+  bottom: 0
+  left: 0
+  right: 0
+  overflow: auto
+  padding: 10px
+  color: #4a4a4a
+  background-color: white
+
+.article__preview-section, .article__item-main-body
+  font-size: 1.6rem
+  color: #333
+  word-wrap: break-word
+  word-break: break-all
+  h1, h2
+    border-bottom: 1px solid $gray
+    padding-bottom: .1em
+    margin-top: 1.2em
+    margin-bottom: 1.4rem
+  img
+    margin: 1.5em 0
+    max-width: 100%
+  p
+    line-height: 1.9
+
+.article__submit-container
+  width: 100%
+  left: 0
+  right: 0
+  bottom: 0
+  height: 41px
+  position: fixed!important
+  padding: 4px 10px
+  background: #eee
+  border-top: 1px solid $gray
+
+.article__items-container
+  padding: calc(1em*2/3)
+  font-size: 12px
+  color: #444
+  border-bottom: 1px solid $gray
+  display: flex
+
+.article__items-body
+  flex: 1 1 0%
+  width: 0
+  min-width: 0
+
+.article__items-info a
+  text-decoration: none
+
+.article__items-title
+  display: block
+  margin-bottom: .5em
+  font-size: 1.3em
+  a
+    text-decoration: none
+
+.article__items-status
+  font-size: 1.2em
+  i
+    color: $gray
+
+.artilce__items-status-liked
+  color: $base-color !important
+
+.articles.show main.main__navigation .container
+  width: 100%
+  max-width: none
+  padding: 0
+
+.article__item-wrapper
+  background-color: $gray-little
+
+.article__item-container
+  padding-top: 24px
+  padding-bottom: 40px
+  display: grid
+  margin-right: auto
+  margin-left: auto
+  max-width: 1280px
+  grid-template-columns: 80px calc(100% - 300px - 80px) 300px
+  grid-template-rows: minmax(270px,auto) 1fr
+  width: calc(100% - 50px)
+
+.article__item-action-area
+  position: sticky
+  top: 20vh
+  will-change: transform
+  margin-top: -20px
+  width: 80px
+  grid-column: 1 / 3
+  grid-row: 1 / 2
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  justify-content: flex-start
+
+.article__item-like-container
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 50px
+  height: 50px
+  font-size: 24px
+  position: relative
+  margin-right: 24px
+  margin-bottom: 16px
+  transition: color .1s
+  &:hover
+    opacity: .8
+
+
+.article__item-like-count
+  position: absolute
+  top: -30px
+  font-size: 1rem
+  font-weight: 700
+  cursor: pointer
+  color: $base-color
+
+.article__item-like-btn
+  height: 100%
+  width: 100%
+  font-size: 20px
+  color: $base-color
+  background-color: white
+  border: 2px solid $base-color
+  border-radius: 50%
+  outline: none
+  box-shadow: 0 3px 6px rgba(0,0,0,.2)
+  &:hover, &:active, &:focus
+    color: $base-color
+    text-decoration: none
+  i
+    display: block
+    line-height: 44px
+    text-align: center
+  &.liked
+    background-color: $base-color
+    color: white
+
+.article__item-stock-container
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 50px
+  height: 50px
+  font-size: 24px
+  position: relative
+  margin-right: 24px
+  margin-bottom: 16px
+  transition: color .1s
+  &:hover
+    opacity: .8
+
+.article__item-stock-btn
+  height: 100%
+  width: 100%
+  font-size: 20px
+  color: white
+  background-color: $gray-dark
+  border: 2px solid $gray-dark
+  border-radius: 50%
+  outline: none
+  box-shadow: 0 3px 6px rgba(0,0,0,.2)
+  &:hover, &:active, &:focus
+    color: white
+    text-decoration: none
+  i
+    display: block
+    line-height: 44px
+    text-align: center
+  &.stocked
+    background-color: $gray-dark
+    color: white
+
+.article__item-stock-check
+  font-size: 12px
+  color: $base-color
+  top: 2px
+
+.article__item-main-area
+  grid-column: 2 / 3
+  grid-row: 1 / 3
+  padding: 16px
+
+.article__item-main-section
+  background-color: white
+  padding: 32px
+
+.article__item-main-header
+  color: $black
+  margin-bottom: 40px
+
+.article__item-main-header-info
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: flex-start
+  width: 100%
+
+.article__item-main-header-author
+  display: flex
+  align-items: center
+  margin-right: 16px
+
+.article__item-main-header-author-img
+  display: flex
+  overflow: hidden
+  border-radius: .2em
+  width: 32px
+  height: 32px
+  margin-right: 8px
+
+.article__item-main-header-author-name a
+  font-size: 1.2rem
+  color: $black
+
+.article__item-main-header-author-time
+  color: #999
+  font-size: 0.8rem
+  margin-right: 16px
+
+.article__item-main-header-meta
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-grow: 1
+
+.article_item-main-header-edit
+  margin-left: auto
+  margin-right: 16px
+  a
+    color: #999
+    font-size: 0.8rem
+
+.article__item-main-header-title
+  font-size: 2.5rem
+  font-weight: 700
+  margin-top: 20px
+  margin-bottom: 16px
+  font-feature-settings: "palt"
+  line-height: 1.4
+
+.article__item-main-body
+  font-size: 1rem
+  color: $black
+  word-wrap: break-word
+  word-break: break-all
+
+.article__item-option-area
+  grid-column: 3 / 4
+  grid-row: 1 / 2
+
+.article__item-agenda-area
+  position: sticky
+  top: 0
+  will-change: transform
+  width: 300px
+  grid-column: 3 / 4
+  grid-row: 2 / 3
+  max-height: 100vh
+
+  li
+    list-style-type: none
+    line-height: 1.4
+    margin: 3px 0
+    a
+      display: block
+      padding: 3px 10px!important
+      line-height: 1.4
+      color: #999
+
+      &:hover
+        background-color: #efefef
+        color: #333
+
+.comment__container
+  background-color: white
+  display: grid
+  grid-template-columns: 80px calc(100% - 300px - 80px) 300px
+  grid-template-rows: minmax(270px,auto) 1fr
+  max-width: 1280px
+  width: calc(100% - 50px)
+  margin-right: auto
+  margin-left: auto
+  padding-top: 30px
+
+.comment__dummy-area
+  width: 80px
+  grid-column: 1 / 3
+  grid-row: 1 / 2
+
+.comment__main-area
+  grid-column: 2 / 3
+  grid-row: 1 / 3
+  padding: 16px
+
+.comment__header-creator
+  display: inline-block
+
+.comment__header-creator-info
+  display: inline-block
+  margin-left: 10px
+
+.comment__header-creator-username
+  display: block
+  margin-top: 1px
+  font-size: 15px
+  font-weight: bold
+
+.comment__header-contribution
+  display: block
+  margin-top: 2px
+  color: #999
+  font-size: 12px
+  font-weight: 400
+
+.comment__header-contribution-count
+  color: #6f6f6f
+  font-size: 13px
+
+.comment__header-contribution-unit
+  color: #999
+  margin-left: 2px
+  font-size: 11px
+
+.comment__header-edit-section a
+  color: #777
+
+.comment__body-container
+  border-radius: 3px
+  position: relative
+  background-color: #fff
+  border: solid 1px #ccc
+  margin-top: 11px
+  margin-bottom: 20px
+
+  &:before, &:after
+    bottom: 100%
+    left: 17px
+    border: solid transparent
+    content: ' '
+    height: 0
+    width: 0
+    position: absolute
+
+  &:before
+    border-bottom-color: #d9d9d9
+    border-width: 7px
+    margin-left: -7px
+
+  &:after
+    border-bottom-color: white
+    border-width: 6px
+    margin-left: -6px
+
+.comment__body
+  padding: 18px 32px
+
+.comment__edit-form-container
+  margin-bottom: 20px
+
+.comment__form-header
+  margin-bottom: 10px
+
+.comment__icon
+  border-radius: 3px
+  display: inline-block
+  line-height: 1
+  overflow: hidden
+  vertical-align: middle
+  vertical-align: top
+  img
+    width: 36px
+    height: 36px
+
+.comment__form-header-label
+  display: inline-block
+  line-height: 36px
+  font-size: 15px
+  font-weight: 700
+  margin-top: 0
+  margin-left: 10px
