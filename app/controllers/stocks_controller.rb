@@ -4,7 +4,7 @@ class StocksController < ApplicationController
 
   def index 
     @articles = Article.where(id: current_user.stocks.select(:article_id))
-                       .includes(:user)
+                       .includes(user: :profile_image_attachment)
                        .order(created_at: :desc)
                        .page(params[:page])
   end
