@@ -1,6 +1,6 @@
 class PasswordResetsController < ApplicationController
   skip_before_action :logged_in_user
-  before_action :get_user,   only: %i[edit update]
+  before_action :set_user,   only: %i[edit update]
   before_action :valid_user, only: %i[edit update]
   before_action :check_expiration, only: %i[edit update]
 
@@ -40,7 +40,7 @@ class PasswordResetsController < ApplicationController
     params.require(:user).permit(:password, :password_confirmation)
   end
 
-  def get_user
+  def set_user
     @user = User.find_by(email: params[:email])
   end
 
@@ -53,7 +53,7 @@ class PasswordResetsController < ApplicationController
 
   def check_expiration
     if @user.password_reset_expired?
-      redirect_to new_password_reset_url, alert: 'Password reset has expired.'
+      redirect_to new_password_reset_url, alert: 'パスワード再設定の有効期限がきれています'
     end
   end
 end

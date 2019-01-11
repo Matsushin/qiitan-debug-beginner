@@ -22,7 +22,7 @@
                 に更新
               </span>
             </div>
-            <% if @article.user == current_user %>
+            <% if current_user?(@article.user) %>
               <div class="article__item-main-header-meta">
                 <div class="article_item-main-header-edit">
                   <%= link_to icon('fas', 'pencil-alt', '編集する'), edit_article_path(@article) %>
@@ -72,7 +72,7 @@
               <div class="text-muted">
                 <%= l(comment.created_at, format: :long) %>
               </div>
-              <% if current_user == comment.user %>
+              <% if current_user?(comment.user) %>
                 <div class="text-right comment__header-edit-section">
                   <%= link_to '編集', '#', class: 'js-comment-edit-link' %>
                   <%= link_to '削除', article_comment_path(@article, comment), remote: true, method: :delete,
