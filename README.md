@@ -1,24 +1,54 @@
-# README
+## 概要
+Rails学習用アプリ。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 対象者
+- Railsの書籍を1冊以上読んでいるまたはRailsチュートリアルを完了させている程度
+- Railsの実務経験がない
 
-Things you may want to cover:
+## デバッグ実施手順
 
-* Ruby version
+## ルール
 
-* System dependencies
+## 環境構築手順
+### 環境
+- ruby v2.5.1
+- rails v5.2.2
+- sqlite
 
-* Configuration
+### セットアップ
+- Matsushin/QiitanDebugBeginnerリポジトリをあなたのリポジトリに[fork](https://qiita.com/YumaInaura/items/acff806290c8953d3185)してください
+  - 自分で答え合わせもする場合はcloneでも可
 
-* Database creation
+```
+git clone git@github.com:あなたのユーザ名/qiitan-debug-beginner.git
+cd qiitan-debug-beginner
+```
 
-* Database initialization
+- 注) GitHubにSSH鍵が登録されておらずクローンに失敗する場合は[こちら](https://qiita.com/knife0125/items/50b80ad45d21ddec61a9)を参考に登録してください
 
-* How to run the test suite
+### 各種gemインストール
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle install --path=vendor/bundle
+```
 
-* Deployment instructions
+- 注) ローカル環境にRuby 2.5.1が入っておらずinstallできない場合は[こちら](https://qiita.com/akisanpony/items/ae9d8eed72945de98285)を参考にバージョンアップしてください
 
-* ...
+### データ準備
+
+```
+rails db:create # DB作成
+rails db:migrate # テーブル作成
+```
+
+### 画面確認
+
+サーバ起動
+```
+rails s
+```
+
+`http://localhost:3000` にアクセスしてログイン画面が表示されればOK。
+
+
+## 備考
