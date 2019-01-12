@@ -31,5 +31,7 @@ module QiitanDebugBeginner
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.rack_dev_mark.enable = !Rails.env.production?
+    config.rack_dev_mark.theme = [:title, Rack::DevMark::Theme::GithubForkRibbon.new(position: 'right')]
   end
 end
