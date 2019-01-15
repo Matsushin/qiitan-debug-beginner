@@ -48,7 +48,7 @@
 <div class="comment__container">
   <div class="comment__dummy-area"></div>
   <div class="comment__main-area">
-    <% @article.comments.includes(:user).order(:created_at).each do |comment| %>
+    <% @article.comments.includes(user: :profile_image_attachment).order(:created_at).each do |comment| %>
       <div class="comment__wrapper js-comment-wrapper" id="js-comment-<%= comment.id %>">
         <div class="js-comment-content">
           <div class="comment__header">
