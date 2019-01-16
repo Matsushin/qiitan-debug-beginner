@@ -71,7 +71,7 @@ class User < ApplicationRecord
   end
 
   def image
-    profile_image.attached? ? profile_image : 'fallback/photo'
+    profile_image.attached? ? profile_image : '/images/fallback/photo.png'
   end
 
   private
