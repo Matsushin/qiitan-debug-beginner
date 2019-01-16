@@ -41,13 +41,13 @@ class PasswordResetsController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:email] || params.dig(:user, :email))
   end
 
   def valid_user
     if not (@user && @user.activated? &&
         @user.authenticated?(:reset, params[:id]))
-      redirect_to root_path
+      redirect_to login_path, alert: 'ユーザが見つかりません'
     end
   end
 

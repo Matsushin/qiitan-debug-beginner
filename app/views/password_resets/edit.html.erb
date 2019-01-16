@@ -5,7 +5,7 @@
     </div>
     <%= simple_form_for(@user, url: password_reset_path(params[:id]), html: { class: 'form-section' }) do |f| %>
       <%= f.error_notification %>
-      <%= f.input :email, as: :hidden, value: @user.email %>
+      <%= f.input :email, as: :hidden, input_html: { value: @user.email } %>
       <div class="form-group">
         <%= f.input :password, autofocus: true, label: '新しいパスワード', hint: '(6文字以上)' %>
       </div>
