@@ -2,7 +2,7 @@
   <div class="container navigation__container">
     <%= link_to 'QiitanDebugBeginner', root_path, class: 'navbar-brand' %>
     <% @q ||= Article.none.search(params[:q]) %>
-    <%= search_form_for @q, url: login_path, html: { class: 'my-2 my-lg-0 navigation__search-form', method: 'get' } do |f| %>
+    <%= search_form_for @q, url: root_path, html: { class: 'my-2 my-lg-0 navigation__search-form', method: 'get' } do |f| %>
         <div class="input-group">
           <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: 'キーワードを入力' %>
           <div class="input-group-append fit-input">
