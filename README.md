@@ -14,7 +14,7 @@ Rails学習用アプリ初級編。
 
 ## デバッグ実施手順
 - 環境構築手順に従って環境構築を行う
-- 回答雛形シートをコピー
+- 回答雛形シートをコピーする
   - [【Rails学習初級編】デバッグ回答雛形](https://docs.google.com/spreadsheets/d/1wVLgIyGdn2iWxYrlwEMCf-mwLvRpuVeixLeiJm91MKs/edit?usp=sharing)
 - デバッグ開始
 - バグ/エラーを見つけたらシートに記入していく
@@ -26,7 +26,7 @@ Rails学習用アプリ初級編。
   
 ## ルール
 - 制限時間は90分とする。
-- バグ/エラーを見つければ1点、修正ができれば2点、回答通りの修正ができればさらに1点
+- バグ/エラーを見つければ1点、修正ができれば2点、回答通りの修正ができればさらに1点。
   - バグ/エラーは10個あるので最高40点とする。
 - 回答はこちらの[シート](https://docs.google.com/spreadsheets/d/1O7Ijf0gCqvE8_vcU2ubn3qHg2Pe9d2WLQgthqWbFOcA/edit?usp=sharing)、[PR](https://github.com/Matsushin/qiitan-debug-beginner/pull/1)を確認する
 - 試験中に[QiitanDebugBeginner](http://qiitan-debug-beginner.herokuapp.com/)は動作確認として操作してもOK。試験中にコードを見るのは禁止。試験前に動作確認やコードを見るのはOKとする。
