@@ -25,6 +25,7 @@ gem 'rack-dev-mark'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'retryable'
 gem 'aws-sdk-s3'
+gem 'mysql2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-toastr'
@@ -32,7 +33,6 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
 end
 
 group :development do
@@ -44,8 +44,4 @@ group :development do
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'letter_opener_web'
-end
-
-group :production do
-  gem 'mysql2'
 end

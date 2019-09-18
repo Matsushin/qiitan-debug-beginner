@@ -41,7 +41,7 @@ PASS: KdsqAdJJZRfuMxhwFwYuuU4g
 ### 環境
 - ruby v2.5.1
 - rails v5.2.2
-- sqlite
+- MySQL 5.7.22
 
 ### セットアップ
 - Matsushin/QiitanDebugBeginnerリポジトリをあなたのリポジトリに[fork](https://qiita.com/YumaInaura/items/acff806290c8953d3185)してください
@@ -54,10 +54,20 @@ cd qiitan-debug-beginner
 
 - 注) GitHubにSSH鍵が登録されておらずクローンに失敗する場合は[こちら](https://qiita.com/knife0125/items/50b80ad45d21ddec61a9)を参考に登録してください
 
+### インストール
+- [Docker for Mac](https://www.docker.com/docker-mac) or [Docker for Windows](https://docs.docker.com/docker-for-windows/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### ビルド
+
+```
+$ docker-compose build
+```
+
 ### 各種gemインストール
 
 ```
-bundle install --path=vendor/bundle
+$ docker-compose run web bundle install
 ```
 
 - 注) ローカル環境にRuby 2.5.1が入っておらずinstallできない場合は[こちら](https://qiita.com/akisanpony/items/ae9d8eed72945de98285)を参考にバージョンアップしてください
@@ -65,31 +75,39 @@ bundle install --path=vendor/bundle
 ### データ準備
 
 ```
-rails db:create # DB作成
-rails db:migrate # テーブル作成
-rails db:seed # 初期データ投入
+$ docker-compose run web bundle exec rails db:create # DB作成
+$ docker-compose run web bundle exec rails db:migrate # テーブル作成
+$ docker-compose run web bundle exec rails db:seed # 初期データ投入
 ```
 
 データが投入されたか確認
 
 ```
-rails c # コンソール開始
+docker-compose run web bundle exec rails c # コンソール開始
 irb(main):001:0> User.count
    (0.6ms)  SELECT COUNT(*) FROM "users"
 => 2
 ```
 
-### 画面確認
+### 起動・終了
 
-サーバ起動
+### 起動コマンド
+
+以下のコマンドで起動します。
+
 ```
-rails s
+$ docker-compose up
 ```
 
 `http://localhost:3000` にアクセスしてログイン画面が表示されればOK。
 
+### 終了
+Ctrl+C
+たまにゴミが残るので、  rm tmp/pid/server.pid を削除する必要があるかも
+
+
 ### テスト開始準備
-ブランチを切り替えてからテスト実施してください。 
+**必ずブランチを切り替えてからテスト実施してください。**
 ```
 git checkout debug-test
 ```
