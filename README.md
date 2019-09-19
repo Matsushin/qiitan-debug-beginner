@@ -16,6 +16,7 @@ Rails学習用アプリ初級編。
 - 環境構築手順に従って環境構築を行う
 - 回答雛形シートをコピー
   - [【Rails学習初級編】デバッグ回答雛形](https://docs.google.com/spreadsheets/d/1wVLgIyGdn2iWxYrlwEMCf-mwLvRpuVeixLeiJm91MKs/edit?usp=sharing)
+- ブランチを `debug-test` に変更
 - デバッグ開始
 - バグ/エラーを見つけたらシートに記入していく
 - バグ/エラーの修正ができたらシートに記入していく
@@ -115,3 +116,20 @@ git checkout debug-test
 ## メールの確認について
 ローカル環境での処理としてはメールは実際には送信されません。
 gemの `letter_opener_web` を利用しているため送信したメールは `http://localhost:3000/letter_opener` にアクセスしてブラウザから確認することができます。
+
+## ログインできるユーザについて
+`db:seed` を実行すると以下2アカウントかローカルの初期データとして利用できます。
+
+1
+```
+ユーザ名：yamada
+メールアドレス：yamada@gmail.com
+パスワード：password
+```
+
+2
+```
+ユーザ名：tanaka
+メールアドレス：tanaka@gmail.com
+パスワード：password
+```
