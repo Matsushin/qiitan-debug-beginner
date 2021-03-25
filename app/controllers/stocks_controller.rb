@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-  before_action :set_article, only: %i[destroy]
+  before_action :set_article, only: %i[create destroy]
   before_action :set_stock, only: %i[destroy]
 
   def index 

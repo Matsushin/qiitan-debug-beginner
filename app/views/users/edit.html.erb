@@ -12,6 +12,7 @@
           </div>
         <% end %>
         <%= f.input_field :profile_image, as: :file, accept: 'image/*' %>
+      <% end %>
       <%= f.input :password, autocomplete: 'new-password', input_html: { class: 'fit-input' }, hint: '空欄のままなら変更しません' %>
       <%= f.input :password_confirmation, autocomplete: 'new-password', input_html: { class: 'fit-input' } %>
       <div class="form-group">
