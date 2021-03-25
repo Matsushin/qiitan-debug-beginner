@@ -200,7 +200,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redcarpet (3.4.0)
+    redcarpet (3.5.1)
     retryable (3.0.3)
     roboto (1.0.1)
       rails (>= 4.2)
