@@ -30,7 +30,8 @@ Rails学習用アプリ初級編。
 - バグ/エラーを見つければ1点、修正ができれば2点、回答通りの修正ができればさらに1点
   - バグ/エラーは10個あるので最高40点とする。
 - 回答はこちらの[シート](https://docs.google.com/spreadsheets/d/1O7Ijf0gCqvE8_vcU2ubn3qHg2Pe9d2WLQgthqWbFOcA/edit?usp=sharing)、[PR](https://github.com/Matsushin/qiitan-debug-beginner/pull/1)を確認する
-- 試験中に[QiitanDebugBeginner](http://qiitan-debug-beginner.herokuapp.com/)は動作確認として操作してもOK。試験中にコードを見るのは禁止。試験前に動作確認やコードを見るのはOKとする。
+- 試験中に[動作確認環境](http://qiitan-debug-beginner.herokuapp.com/)は正しい動きの動作確認として操作してもOK。試験中にコードを見るのは禁止。試験前に動作確認やコードを見るのはOKとする。
+  - **ユーザ登録時に送信されるメールは迷惑メールまたはGmailだと「プロモーション」に入っている可能性があることに注意**
 
 Basic認証
 ```
@@ -118,7 +119,7 @@ git checkout debug-test
 gemの `letter_opener_web` を利用しているため送信したメールは `http://localhost:3000/letter_opener` にアクセスしてブラウザから確認することができます。
 
 ## ログインできるユーザについて
-`db:seed` を実行すると以下2アカウントかローカルの初期データとして利用できます。
+`db:seed` を実行すると以下2アカウントかローカルの初期データとして利用できます。[動作確認環境](http://qiitan-debug-beginner.herokuapp.com/)でも利用できます。
 
 1
 ```
